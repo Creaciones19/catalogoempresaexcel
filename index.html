@@ -342294,7 +342294,7 @@ function refresh(reset=true){
  <div class="card-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="m3 10 9-7 9 7v11H3z"/><path d="M9 21v-8h6v8"/></svg></div>
  <div class="card-body"><div class="top"><span class="pill ${x.proveedor==='MEGA'?'mega':''}">${safe(x.proveedor)}</span><span>Folio ${safe(x.folio)}</span></div>
  <h2>${safe(x.colonia||x.municipio||'Propiedad')}</h2><div class="sub">${safe(x.municipio)} · ${safe(x.estado)} · ${safe(x.lista)}</div>
- <div class="price-label">Precio total ajustado</div><div class="price">${money(x.total)}</div>
+ <div class="price-label">Los precios pueden variar sin previo aviso</div><div class="price">${money(x.total)}</div>
  <div class="payments"><div><small>Primer pago</small><strong>${money(x.pago1)}</strong></div><div><small>Segundo pago</small><strong>${money(x.pago2)}</strong></div></div>
  <div class="address">${safe(x.direccion||'Dirección no informada')}${x.cp?' · C.P. '+safe(x.cp):''}</div>
  <div class="actions"><a class="whatsapp-link" href="${whatsappUrl(x)}" target="_blank" rel="noopener noreferrer">Solicitar información por WhatsApp</a>${x.mapa&&/^https?:\/\//.test(x.mapa)?`<a href="${safe(x.mapa)}" target="_blank" rel="noopener">Ver ubicación</a>`:''}${x.revision?'<span class="warn">Precio pendiente de revisión</span>':''}</div></div></article>`).join('')||'<p>No se encontraron propiedades con estos filtros.</p>';
