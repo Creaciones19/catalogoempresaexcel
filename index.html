@@ -55,6 +55,36 @@ body.light .warn {color:#a46100}
 body.light footer {border-color:#d4e0e8;color:#506979}
 @media(max-width:650px){.theme-choice{width:34px;height:34px}.theme-switch{margin-left:auto}}
 
+.buen-fin-marquesina {
+  position: relative; isolation: isolate; overflow: hidden;
+  margin-block: 0 clamp(16px, 2.5vw, 28px);
+  padding-block: 16px;
+  border: 1px solid #00c5e5;
+  background: linear-gradient(110deg, #041117, #123248 52%, #041117);
+  color: #fff; text-align: center;
+  font: 800 clamp(0.92rem, 2.5vw, 1.16rem)/1.4 system-ui, sans-serif;
+  letter-spacing: 0.045em; text-transform: uppercase;
+}
+.buen-fin-marquesina::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: -1;
+  background: linear-gradient(112deg, transparent 38%, #69dfff22 46%, #e8faff78 50%, #69dfff22 54%, transparent 62%);
+  animation: buen-fin-reflejo 5.5s ease-in-out infinite;
+}
+.buen-fin-cinta { display: flex; width: max-content; animation: buen-fin-desplazar 40s linear infinite; }
+.buen-fin-grupo { display: flex; flex: none; min-width: 100vw; justify-content: space-around; }
+.buen-fin-frase { flex: none; white-space: nowrap; padding-inline: clamp(24px, 4vw, 64px); }
+.buen-fin-restricciones { display: block; margin: 5px 16px 0; color: #fff; font-size: 0.75rem; font-weight: 400; letter-spacing: normal; text-transform: none; }
+@keyframes buen-fin-desplazar { to { transform: translateX(-50%); } }
+@keyframes buen-fin-reflejo {
+  0%, 18% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .buen-fin-marquesina::before, .buen-fin-cinta { animation: none; }
+  .buen-fin-cinta, .buen-fin-grupo { width: 100%; min-width: 0; }
+  .buen-fin-frase { flex: 1; white-space: normal; }
+  .buen-fin-grupo[aria-hidden], .buen-fin-frase[aria-hidden] { display: none; }
+}
 </style>
 </head>
 <body>
@@ -75,6 +105,25 @@ body.light footer {border-color:#d4e0e8;color:#506979}
  <div class="hero-perks"><span>Asesoría jurídica</span><span>Precios documentados</span><span>Atención personalizada</span></div>
 </section>
 <main class="wrap" id="catalogo">
+<div class="buen-fin-marquesina">
+  <div class="buen-fin-cinta">
+    <div class="buen-fin-grupo">
+      <span class="buen-fin-frase">Descuentos de Buen Fin en todas nuestras propiedades</span>
+      <span class="buen-fin-frase" aria-hidden="true">Descuentos de Buen Fin en todas nuestras propiedades</span>
+      <span class="buen-fin-frase" aria-hidden="true">Descuentos de Buen Fin en todas nuestras propiedades</span>
+      <span class="buen-fin-frase" aria-hidden="true">Descuentos de Buen Fin en todas nuestras propiedades</span>
+      <span class="buen-fin-frase" aria-hidden="true">Descuentos de Buen Fin en todas nuestras propiedades</span>
+    </div>
+    <div class="buen-fin-grupo" aria-hidden="true">
+      <span class="buen-fin-frase">Descuentos de Buen Fin en todas nuestras propiedades</span>
+      <span class="buen-fin-frase">Descuentos de Buen Fin en todas nuestras propiedades</span>
+      <span class="buen-fin-frase">Descuentos de Buen Fin en todas nuestras propiedades</span>
+      <span class="buen-fin-frase">Descuentos de Buen Fin en todas nuestras propiedades</span>
+      <span class="buen-fin-frase">Descuentos de Buen Fin en todas nuestras propiedades</span>
+    </div>
+  </div>
+  <small class="buen-fin-restricciones">Aplican restricciones.</small>
+</div>
  <div class="section-kicker">CATÁLOGO NACIONAL</div><h2 class="section-title">Propiedades disponibles en catálogo</h2>
  <div class="meta"><span id="count"></span><select id="sort" class="sort-select"><option value="">Orden original</option><option value="asc">Precio menor a mayor</option><option value="desc">Precio mayor a menor</option></select></div>
  <div id="cards" class="grid"></div>
